@@ -22,9 +22,10 @@ class ball
 
 int main (void)
 {
-    cout << "Hello World on C++\n";
-    ball myball(1, "Red");
-    myball.print_name();
+    ball * myball = new ball(2, "Blue");
+    myball->print_name();
+    delete myball;
     return 0;
+
 }
 
