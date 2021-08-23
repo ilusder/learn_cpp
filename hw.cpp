@@ -13,19 +13,37 @@ class ball
         this->name = name;
     }
 
+    void print_id(void)
+    {
+        cout << "Id: " << this->id << "\t";
+    }
 
     void print_name(void)
     {
-        cout << this->name << "\n";
+        cout << "Name: " << this->name << "\n";
+    }
+
+    void print_data(void)
+    {
+        this->print_id();
+        this->print_name();
     }
 };
 
+
 int main (void)
 {
-    ball * myball = new ball(2, "Blue");
-    myball->print_name();
-    delete myball;
-    return 0;
+    ball * myball[10];
+    for (int i = 0; i < 10; i++)
+    {
+        myball[i] = new ball(i, "Blue");
+        myball[i]->print_data();
+    }
+    for (int k = 0; k < 10; k++)
+    {
+        delete myball[k];
+    }
 
+    return 0;
 }
 
